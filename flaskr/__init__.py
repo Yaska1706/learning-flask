@@ -28,7 +28,8 @@ def create_app(test_config=None):
     # a simple page that says hello
     @app.route('/hello')
     def hello():
-        return 'Hello, World!'
+        print("Hello, World!")
+        return hello
 
     def create_app():
         app = ...
@@ -36,6 +37,7 @@ def create_app(test_config=None):
 
         from . import db
         db.init_app(app)
+        return create_app
 
 
 
